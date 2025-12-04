@@ -45,7 +45,7 @@ const DeviceManager = () => {
     });
 
     return () => unsubscribe();
-  }, []);
+  }, [loadDevices]); 
 
   const loadDevices = async () => {
     try {
@@ -180,11 +180,11 @@ const DeviceManager = () => {
     }
   };
 
-  const formatLastSeen = (timestamp) => {
-    if (!timestamp) return 'Nunca';
-    const date = new Date(timestamp);
-    return date.toLocaleString('pt-BR');
-  };
+  //const formatLastSeen = (timestamp) => {
+    //if (!timestamp) return 'Nunca';
+    //const date = new Date(timestamp);
+    //return date.toLocaleString('pt-BR');
+  //};
 
   const handleCopyDeviceId = (deviceId) => {
     navigator.clipboard.writeText(deviceId);

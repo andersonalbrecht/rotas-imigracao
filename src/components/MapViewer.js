@@ -14,7 +14,7 @@ import {
   Paper,
   CircularProgress,
   Alert,
-  Autocomplete,
+  //Autocomplete,
   Chip,
   Stack,
   IconButton,
@@ -24,7 +24,7 @@ import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 import { ptBR } from 'date-fns/locale';
-import { ref, get, query, orderByChild } from 'firebase/database';
+import { ref, get} from 'firebase/database';
 import { database } from '../firebaseConfig';
 import ZoomInIcon from '@mui/icons-material/ZoomIn';
 import MyLocationIcon from '@mui/icons-material/MyLocation';
@@ -116,7 +116,7 @@ const MapViewer = () => {
     return () => {
       window.removeEventListener('deviceRenamed', handleDeviceRenamed);
     };
-  }, []);
+  }, [loadDevices]);
 
   const loadDevices = async () => {
     try {
